@@ -301,8 +301,10 @@ $(document).on("click", ".saveInviteButton", function() {
         $("#loader").removeClass("hide");
     }, "onfinish": function(id) {
         $("#loader").addClass("hide");
-        $("#inviteWrap").append(downloadButton);
-    }}).AddTo("inviteInsertWrap");
+        $("#inviteWrap").append(downloadButton)
+        $("#inviteInsertWrap").AddTo();
+    }})
+    // .AddTo("inviteInsertWrap");
     
     
     
