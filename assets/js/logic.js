@@ -298,16 +298,9 @@ $(document).on("click", ".saveInviteButton", function() {
 
     GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "onstart": function(id){
         $("#inviteImageDiv").addClass("hide");
-        $("#loader").removeClass("hide");
     }, "onfinish": function(id) {
-        $("#loader").addClass("hide");
-        $("#inviteWrap").append(downloadButton)
-        $("#inviteInsertWrap").AddTo();
-    }})
-    // .AddTo("inviteInsertWrap");
-    
-    
-    
+        $("#inviteWrap").append(downloadButton);
+    }}).AddTo("inviteInsertWrap");
     
 });
 
