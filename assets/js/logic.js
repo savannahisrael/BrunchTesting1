@@ -158,7 +158,7 @@ $(document).on("click", ".buttonMore", function(){
     var pricePoint = $(this).data("price");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").addClass("hide");
-    $("#inviteInsert").addClass("hide");
+  
 
 
 
@@ -251,7 +251,7 @@ $(document).on("click", ".modalClose", function() {
     $("#resultsLarge").removeClass("hide");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").addClass("hide");
-    $("#inviteInsertWrap").addClass("hide");
+    $("#inviteInsertWrap").addClass("invisible");
 });
 
 $(document).on("click", "#bubblyButton", function() {
@@ -294,6 +294,6 @@ $(document).on("click", ".editInviteButton", function() {
 $(document).on("click", ".saveInviteButton", function() {
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").addClass("hide");
-    $("#inviteInsertWrap").removeClass("hide");
+    $("#inviteInsertWrap").removeClass("invisible").addClass("visible");
 });
 
