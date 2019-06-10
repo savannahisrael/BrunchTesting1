@@ -251,7 +251,7 @@ $(document).on("click", ".modalClose", function() {
     $("#resultsLarge").removeClass("hide");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").addClass("hide");
-    $("#inviteInsert").addClass("hide");
+    $("#inviteInsertWrap").addClass("hide");
 });
 
 $(document).on("click", "#bubblyButton", function() {
@@ -288,10 +288,12 @@ $(document).on("click", ".submitInvite", function() {
 $(document).on("click", ".editInviteButton", function() {
     $("#inviteWrap").addClass("hide");
     $("#inviteFormWrap").removeClass("hide");
+    $("#inviteInsertWrap").empty();
 });
 
 $(document).on("click", ".saveInviteButton", function() {
     $("#inviteFormWrap").addClass("hide");
-    $("#inviteInsert").removeClass("hide");
+    $("#inviteWrap").addClass("hide");
+    $("#inviteInsertWrap").removeClass("hide");
 });
 
