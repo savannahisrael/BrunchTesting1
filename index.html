@@ -67,7 +67,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        
+
                         <!-- Results Large -->
                         <div class="card mb-3 center" id="resultsLarge">
                             <div class="row no-gutters">
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Invite Form -->
                     <div class="container" id="inviteFormWrap">
                         <!-- Choose Style Buttons -->
@@ -142,7 +142,7 @@
 
                             <div class="text-center">
                                 <button type="button" id="submitInvite"
-                                    class="btn btn-primary center-block submitInvite">Get Your Invite</button>
+                                    class="btn btn-primary center-block bellhop submitInvite">Preview Your Invite</button>
                                 <br>
                             </div>
                         </form>
@@ -153,7 +153,8 @@
                     <div class="container" id="inviteWrap">
 
                         <div class="card" id="inviteImageDiv" style="max-width: 450px; min-width: 300px;">
-                            <img id="inviteBackground" src="./assets/images/floralInvite.jpg" class="card-img" alt="floral invitation">
+                            <img id="inviteBackground" src="./assets/images/floralInvite.jpg" class="card-img"
+                                alt="floral invitation">
                             <div class="card-img-overlay">
                                 <div id="inviteTextDiv" style="width: 100%; height: 40%;">
                                     <div id="join" class="card-text text-center">Please Join</div>
@@ -168,11 +169,14 @@
                                 </div>
                             </div>
                         </div>
-
-                    <div id="inviteInsert"></div>
-
-                        <br><button type="button" id="downloadInvite"
-                            class="btn btn-primary center-block downloadInvite">Download Your Invite</button>
+                        <button type="button" id="backInviteButton"
+                        class="btn btn-primary center-block bellhop editInviteButton">Go Back</button>
+                        <button type="button" id="saveInviteButton"
+                        class="btn btn-primary center-block bellhop saveInviteButton">Download Or Share Invite</button>
+                    </div>
+                    
+                    <div id="inviteInsert"><br><button type="button" id="downloadInvite"
+                        class="btn btn-primary center-block bellhop downloadInvite">Download Or Share Invite</button>
                     </div>
 
                     <div class="modal-footer">

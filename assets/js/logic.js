@@ -158,6 +158,7 @@ $(document).on("click", ".buttonMore", function(){
     var pricePoint = $(this).data("price");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").addClass("hide");
+    $("#inviteInsert").addClass("hide");
 
 
 
@@ -249,24 +250,25 @@ $(document).on("click", ".buttonInvite", function() {
 $(document).on("click", ".modalClose", function() {
     $("#resultsLarge").removeClass("hide");
     $("#inviteFormWrap").addClass("hide");
-    $("#inviteWrap").addClass("hide")
+    $("#inviteWrap").addClass("hide");
+    $("#inviteInsert").addClass("hide");
 });
 
 $(document).on("click", "#bubblyButton", function() {
     $("#inviteBackground").attr("src", "https://i.pinimg.com/564x/02/de/85/02de8582b278ecfc14d9c1a45508e3e4.jpg");
-})
+});
 $(document).on("click", "#eggButton", function() {
     $("#inviteBackground").attr("src", "https://i.pinimg.com/564x/23/ad/f0/23adf058de303e77b35df2fb80f78877.jpg");
-})
+});
 $(document).on("click", "#floralButton", function() {
     $("#inviteBackground").attr("src", "https://i.pinimg.com/564x/53/c3/6a/53c36a20c23568942e55d5874836291c.jpg");
-})
+});
 
 $(document).on("click", ".submitInvite", function() {
-    $("#resultsLarge").addClass("hide");
+    // $("#resultsLarge").addClass("hide");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").removeClass("hide");
-    $("#inviteImageDiv").css('visibility', 'hidden');
+    // $("#inviteInsert").addClass("hide");
 
     var hostName = $("#hostName").val().trim();
     var eventDate = $("#eventDate").val().trim();
@@ -279,12 +281,17 @@ $(document).on("click", ".submitInvite", function() {
     $(".venueAddressPrint").html(inviteBrunchSpotAddress);
     $(".customMessagePrint").html(customMessage);
 
-    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "onstart": function(id) {
-        $("#loader").removeClass("hide")}, "onfinish": function(id) {
-            $("#loader").addClass("hide");
-            $("#inviteImageDiv").addClass("hide");
-        }
-    }).AddTo("inviteInsert");
+    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv"}).AddTo("inviteInsert");
 
+});
+
+$(document).on("click", ".editInviteButton", function() {
+    $("#inviteWrap").addClass("hide");
+    $("#inviteFormWrap").removeClass("hide");
+});
+
+$(document).on("click", ".saveInviteButton", function() {
+    $("#inviteFormWrap").addClass("hide");
+    $("#inviteInsert").removeClass("hide");
 });
 
