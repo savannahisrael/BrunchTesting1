@@ -1,13 +1,6 @@
 var clickSound = document.createElement("audio");
 clickSound.setAttribute("src", "assets/audio/shooting-star.mp3");
 
-a2a_config.overlays = a2a_config.overlays || [];
-    a2a_config.overlays.push({
-    services: ['facebook', 'twitter', 'facebook_messenger', 'sms', 'google_gmail', 'email', 'whatsapp', 'copy_link'],
-    size: '50',
-    style: 'horizontal',
-    position: 'top center'
-});
 
 var filteredPriceLow;
 var filteredPriceMid;
@@ -273,10 +266,8 @@ $(document).on("click", "#floralButton", function() {
 });
 
 $(document).on("click", ".submitInvite", function() {
-    // $("#resultsLarge").addClass("hide");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").removeClass("hide");
-    // $("#inviteInsert").addClass("hide");
 
     var hostName = $("#hostName").val().trim();
     var eventDate = $("#eventDate").val().trim();
@@ -298,24 +289,10 @@ $(document).on("click", ".editInviteButton", function() {
 });
 
 $(document).on("click", ".saveInviteButton", function() {
-    $("#editInviteButton").addClass("hide");
-    $("#saveInviteButton").addClass("hide");
-    
-    var downloadButton = $("<button>").attr("type", "button").addClass("btn btn-primary bellhop downloadInvite").text("Download Invite");
+    $("#downloadMessage").html("Your Invite Will Automatically Download Soon")
 
-    a2a_config.overlays = a2a_config.overlays || [];
-    a2a_config.overlays.push({
-    services: ['facebook', 'twitter', 'facebook_messenger', 'sms', 'google_gmail', 'email', 'whatsapp', 'copy_link'],
-    size: '50',
-    style: 'horizontal',
-    position: 'top center'
-});
-
-    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "onstart": function(id){
-        $("#inviteImageDiv").addClass("hide");
-    }, "onfinish": function(id) {
-        $("#inviteWrap").append(downloadButton);
-    }}).AddTo("inviteInsertWrap");
-    
+    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "format": "png", "download": 1, "onfinish": function(id) {
+        $("#downloadMessage").html("Congrats!  Your Invite Has Downloaded")
+    }}).Create();
 });
 
