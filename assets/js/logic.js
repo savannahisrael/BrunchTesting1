@@ -57,7 +57,7 @@ $("#submitSearch").on("click", function (event) {
             //ajax call to the zomato api, plugging in values fo lat and long
 
             $.ajax({
-                url: "http://cors-anywhere.herokuapp.com/https://developers.zomato.com/api/v2.1/search?q=brunch&lat=" + lat + "&lon=" + lng + "&apikey=527733933cfc51b0f78491172626a1a3&count=all",
+                url: "https://cors-anywhere.herokuapp.com/https://developers.zomato.com/api/v2.1/search?q=brunch&lat=" + lat + "&lon=" + lng + "&apikey=527733933cfc51b0f78491172626a1a3&count=all",
                 method: "POST",
             }).then(function (response) {
                 console.log(response)
