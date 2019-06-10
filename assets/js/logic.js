@@ -282,7 +282,7 @@ $(document).on("click", ".submitInvite", function() {
     GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "onstart": function() {
         $("#loader").removeClass("hide");
     }, "onfinish": function() {
-        $("#loader".addClass("hide");)
+        $("#loader".addClass("hide");
     }}).AddTo("inviteInsert");
 
 
