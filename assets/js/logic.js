@@ -1,6 +1,13 @@
 var clickSound = document.createElement("audio");
 clickSound.setAttribute("src", "assets/audio/shooting-star.mp3");
 
+a2a_config.overlays = a2a_config.overlays || [];
+    a2a_config.overlays.push({
+    services: ['facebook', 'twitter', 'facebook_messenger', 'sms', 'google_gmail', 'email', 'whatsapp', 'copy_link'],
+    size: '50',
+    style: 'horizontal',
+    position: 'top center'
+});
 
 var filteredPriceLow;
 var filteredPriceMid;
@@ -296,6 +303,14 @@ $(document).on("click", ".saveInviteButton", function() {
     
     var downloadButton = $("<button>").attr("type", "button").addClass("btn btn-primary bellhop downloadInvite").text("Download Invite");
 
+    a2a_config.overlays = a2a_config.overlays || [];
+    a2a_config.overlays.push({
+    services: ['facebook', 'twitter', 'facebook_messenger', 'sms', 'google_gmail', 'email', 'whatsapp', 'copy_link'],
+    size: '50',
+    style: 'horizontal',
+    position: 'top center'
+});
+
     GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "onstart": function(id){
         $("#inviteImageDiv").addClass("hide");
     }, "onfinish": function(id) {
@@ -304,4 +319,3 @@ $(document).on("click", ".saveInviteButton", function() {
     
 });
 
-e
