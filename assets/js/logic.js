@@ -266,6 +266,7 @@ $(document).on("click", ".submitInvite", function() {
     $("#resultsLarge").addClass("hide");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").removeClass("hide");
+    $("#inviteImageDiv").css('visibility', 'hidden');
 
     var hostName = $("#hostName").val().trim();
     var eventDate = $("#eventDate").val().trim();
