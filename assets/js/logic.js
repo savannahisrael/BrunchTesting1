@@ -279,10 +279,10 @@ $(document).on("click", ".submitInvite", function() {
     $(".venueAddressPrint").html(inviteBrunchSpotAddress);
     $(".customMessagePrint").html(customMessage);
 
-    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "onstart": function() {
-        $("#loader").removeClass("hide");
-    }, "onfinish": function() {
-        $("#loader".addClass("hide");
+    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv"} {"onstart": function() {
+        $("#loader").removeClass("hide")}
+    } {"onfinish": function() {
+        $("#loader".addClass("hide")}
     }}).AddTo("inviteInsert");
 
 
