@@ -251,7 +251,7 @@ $(document).on("click", ".modalClose", function() {
     $("#resultsLarge").removeClass("hide");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").addClass("hide");
-    $("#inviteInsertWrap").empty();
+    $("#downloadMessage").empty();
     
 });
 
@@ -285,7 +285,7 @@ $(document).on("click", ".submitInvite", function() {
 $(document).on("click", ".editInviteButton", function() {
     $("#inviteWrap").addClass("hide");
     $("#inviteFormWrap").removeClass("hide");
-    $("#inviteInsertWrap").empty();
+    $("#downloadMessage").empty();
 });
 
 $(document).on("click", ".saveInviteButton", function() {
