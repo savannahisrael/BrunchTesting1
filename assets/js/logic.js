@@ -281,7 +281,7 @@ $(document).on("click", ".submitInvite", function() {
     $(".venueAddressPrint").html(inviteBrunchSpotAddress);
     $(".customMessagePrint").html(customMessage);
 
-    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv"}).AddTo("inviteInsert");
+    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv"}).AddTo("inviteInsertWrap");
 
 });
 
