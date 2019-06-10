@@ -291,16 +291,22 @@ $(document).on("click", ".editInviteButton", function() {
 });
 
 $(document).on("click", ".saveInviteButton", function() {
-    
-    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "onstart": function(id){
-        $("#inviteImageDiv").addClass("hide");
-    }}).AddTo("inviteInsertWrap");
-    
     $("#editInviteButton").addClass("hide");
     $("#saveInviteButton").addClass("hide");
     
     var downloadButton = $("<button>").attr("type", "button").addClass("btn btn-primary bellhop downloadInvite").text("Download Invite");
-    $("#inviteWrap").append(downloadButton);
+
+    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "onstart": function(id){
+        $("#inviteImageDiv").addClass("hide");
+        $("#loader").removeClass("hide");
+    }, "onfinish": function(id) {
+        $("#loader").addClass("hide");
+        $("#inviteWrap").append(downloadButton);
+    }}).AddTo("inviteInsertWrap");
+    
+    
+    
+    
 });
 
 e
