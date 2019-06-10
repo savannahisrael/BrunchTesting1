@@ -251,7 +251,7 @@ $(document).on("click", ".modalClose", function() {
     $("#resultsLarge").removeClass("hide");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").addClass("hide");
-    $("#downloadMessage").empty();
+    $("#downloadMessage").addClass("hide");
     
 });
 
@@ -285,14 +285,14 @@ $(document).on("click", ".submitInvite", function() {
 $(document).on("click", ".editInviteButton", function() {
     $("#inviteWrap").addClass("hide");
     $("#inviteFormWrap").removeClass("hide");
-    $("#downloadMessage").empty();
+    $("#downloadMessage").addClass("hide");
 });
 
 $(document).on("click", ".saveInviteButton", function() {
-    $("#downloadMessage").html("Your Invite Will Automatically Download Soon")
+    $("#downloadMessage").html("Your Invite Will Automatically Download Soon").removeClass("hide");
 
     GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "format": "png", "download": 1, "onfinish": function(id) {
-        $("#downloadMessage").html("Congrats!  Your Invite Has Downloaded")
+        $("#downloadMessage").html("Congrats!  Your Invite Has Downloaded!");
     }}).Create();
 });
 
