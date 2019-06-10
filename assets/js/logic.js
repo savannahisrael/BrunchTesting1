@@ -283,8 +283,7 @@ $(document).on("click", ".submitInvite", function() {
             $("#loader").addClass("hide");
             $("#inviteImageDiv").addClass("hide");
         }
-    }}).AddTo("inviteInsert");
-
+    }).AddTo("inviteInsert");
 
 });
 
