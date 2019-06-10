@@ -252,6 +252,7 @@ $(document).on("click", ".modalClose", function() {
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").addClass("hide");
     $("#inviteInsertWrap").addClass("invisible");
+    $("#inviteInsertWrap").empty();
 });
 
 $(document).on("click", "#bubblyButton", function() {
