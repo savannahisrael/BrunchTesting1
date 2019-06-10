@@ -1,0 +1,204 @@
+body {
+    background-image: url(../images/ShiplapBackgrounf.png);
+    cursor: url("../images/champagne-pointer.png"), default !important;
+} 
+
+.jumbotron {
+    background-image: url(../images/Header.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 500px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: palevioletred;
+    font-family: 'Rochester', cursive;
+    text-align: center;
+    position: relative;
+    font-size: 525%;
+    bottom: -100%;
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: palevioletred;
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+    position: relative;
+    font-size: 300%;
+    bottom: -100%;
+    margin-bottom: 50px;
+}
+#firstForm {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+form {
+    margin-top: 100px;
+    width: 75%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+
+.card {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#submit:hover {
+    cursor: url("../images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+.bellhop:hover {
+    cursor: url("../images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+/* #r1ButtonMore:hover {
+    cursor: url("images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+#r2ButtonMore:hover {
+    cursor: url("images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+#r3ButtonMore:hover {
+    cursor: url("images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+#r4ButtonMore:hover {
+    cursor: url("images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+#r5ButtonMore:hover {
+    cursor: url("images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+#r1InviteButton:hover {
+    cursor: url("images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+#r2InviteButton:hover {
+    cursor: url("images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+#r3InviteButton:hover {
+    cursor: url("images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+#r4InviteButton:hover {
+    cursor: url("images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+#r5InviteButton:hover {
+    cursor: url("images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+} */
+
+#close:hover {
+    cursor: url("../images/mouse-glass.png"), default !important;
+    background-color: palevioletred;
+    color: black;
+}
+
+.btn-primary {
+    color: black;
+    background-color: lightpink;
+    align-self: center;
+    font-family: 'Old Standard TT', serif;
+    padding-bottom: 5px;
+    padding-top: 8px;
+    border: white;
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.close {
+    color: black;
+    background-color: lightpink;
+    align-self: center;
+    font-family: 'Old Standard TT', serif;
+    padding-bottom: 5px;
+    padding-top: 8px;
+    border: white;
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.heading {
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+    font-weight: 5px;
+}
+
+.form-group {
+    margin-top: 20px;
+    font-family: 'Old Standard TT', serif;
+    font-size: 30px;
+}
+
+label {
+    font-family: 'Old Standard TT', serif;
+    font-size: 30px;
+    text-align: center;  
+}
+
+#resultsWrap {
+    margin-top: 100px;
+    width: 75%;
+    margin: 0 20px 0 0 auto;
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+
+h4 {
+    font-family: 'Old Standard TT', serif;
+}
+
+.hide {
+    display: none;
+} 
+
+#loader, 
+#alert {
+    z-index: 999;
+    text-align: center;
+    padding: 10%;
+    position: fixed;
+    background: rgba(255,255,255,.8);
+    width: 100vw;
+    height: 100vh;
+    color: palevioletred;
+}
+
+#loader h3, 
+h3.alert-msg {
+    color: palevioletred;
+    padding-top: 5%;
+    font-size: 3em;
+    font-weight: 300;
+}

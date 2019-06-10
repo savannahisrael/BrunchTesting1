@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="shortcut icon" href="assets/images/train-icon.png"> -->
+    <title>Brunch for Babes</title>
+    <!-- CSS Reset -->
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
+    <!-- jQuery -->
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cyborg/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Rochester&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@grabzit/js@3.3.0/grabzit.min.js"></script>
+
+</head>
+
+
+<body>
+    <div id="alert" class="hide">
+        <h3 class="alert-msg"></h3>
+        <button id="alert-btn" class="btn-primary">Close</button>
+    </div>
+    <div id="loader" class="hide">
+        <img src="assets/images/loader.gif" alt="loading">
+        <h3>Loading...</h3>
+    </div>
+    <header>
+        <div class="jumbotron jumbotron-fluid" id="brunch-header">
+            <!-- <img src="images/Header.png" class="img-fluid" width="100%"> -->
+            <h1><strong>Babes In Brunchland</strong></h1>
+        </div>
+    </header>
+
+    </div class="container" id="mainContent">
+    <!-- Modal with Large Results -->
+
+
+    <div class="modal" tabindex="-1" role="dialog" id="resultsModal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Get That Brunch</h5>
+                    <button type="button bellhop" class="close modalClose" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        
+                        <!-- Results Large -->
+                        <div class="card mb-3 center" id="resultsLarge">
+                            <div class="row no-gutters">
+                                <img class="col-md-4" id="rImg"></img>
+                                <div class="col-md-8 text-center">
+                                    <div class="card-body">
+                                        <br>
+                                        <h2 class="card-title" id="rName"></h2>
+                                        <h4 id="rRating"></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row no-gutters">
+                                <div class="col-md-7 text-center">
+                                    <div class="card-body">
+                                        <br>
+                                        <h4 id="rStreet"></h4>
+                                        <h4 id="rCity"></h4>
+                                        <br>
+                                        <br>
+                                        <button type="button"
+                                            class="btn btn-primary center-block bellhop buttonInvite">Make An
+                                            Invite</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-5" id="map">testing</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Invite Form -->
+                    <div class="container" id="inviteFormWrap">
+                        <!-- Choose Style Buttons -->
+                        <div class="container text-center" id="styleButtonWrap">
+                            <label class="text-center" for="styleButtons">Choose A Style</label>
+                            <div class="row" id="styleButtons">
+                                <div class="col-md-4">
+                                    <button class="btn btn-primary" id="bubblyButton" type="submit"><img
+                                            src="./assets/images/bubblyInvite.jpg" alt="bubbly style"
+                                            class="img-thumbnail float-left"></button></div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-primary" id="eggButton" type="submit"><img
+                                            src="./assets/images/sunnySideInvite.jpg" alt="egg style"
+                                            class="img-thumbnail"></button></div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-primary" id="floralButton" type="submit"><img
+                                            src="./assets/images/floralInvite.jpg" alt="floral style"
+                                            class="img-thumbnail float-right"></button></div>
+                            </div>
+                        </div>
+                        <!-- Custom Invite Form -->
+                        <form id="inviteForm">
+                            <div class="form-group text-center">
+                                <label for="hostName">Host Name(s)</label>
+                                <input type="text" class="form-control" id="hostName" placeholder="Host Name(s)">
+                            </div>
+                            <div class="form-group text-center">
+                                <label for="eventDate">Event Date</label>
+                                <input type="text" class="form-control" id="eventDate"
+                                    placeholder="Sunday June 09 2019">
+                            </div>
+                            <div class="form-group text-center">
+                                <label for="eventTime">Event Time</label>
+                                <input type="text" class="form-control" id="eventTime" placeholder="11:30 AM">
+                            </div>
+                            <div class="form-group text-center">
+                                <label for="customMessage">Custom Message</label>
+                                <input type="text" class="form-control" id="customMessage"
+                                    placeholder="Let's get Day Drunk!">
+                            </div>
+
+
+                            <div class="text-center">
+                                <button type="button" id="submitInvite"
+                                    class="btn btn-primary center-block submitInvite">Get Your Invite</button>
+                                <br>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <!-- Invite Image -->
+                    <div class="container" id="inviteWrap">
+
+                        <div class="card" id="inviteImageDiv" style="max-width: 450px; min-width: 300px;">
+                            <img id="inviteBackground" src="./assets/images/floralInvite.jpg" class="card-img" alt="floral invitation">
+                            <div class="card-img-overlay">
+                                <div id="inviteTextDiv" style="width: 100%; height: 40%;">
+                                    <div id="join" class="card-text text-center">Please Join</div>
+                                    <div id="host" class="card-text text-center hostNamePrint">Host Name(s)</div>
+                                    <div id="dateTime" class="card-text text-center eventDatePrint">Event Date Time>
+                                    </div>
+                                    <div id="venue" class="card-text text-center venueNamePrint">Venue Name</div>
+                                    <div id="address" class="card-text text-center venueAddressPrint">1234 Name St</div>
+                                    <div id="message" class="card-text text-center customMessagePrint">Custom Message
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div id="inviteInsert"></div>
+
+                        <br><button type="button" id="downloadInvite"
+                            class="btn btn-primary center-block downloadInvite">Download Your Invite</button>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary bellhop modalClose" id="close"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Input Form -->
+    <div class="container" id="inputFormWrap">
+        <div class="row">
+            <div class="col-lg-12">
+                <form id="firstForm">
+                    <div class="form-group text-center">
+                        <label for="exampleFormControlInput1">Zip Code</label>
+                        <input type="number" class="form-control" id="zip" placeholder="80109">
+                    </div>
+                    <div class="form-group text-center">
+                        <label for="exampleFormControlSelect1">Price Point</label>
+                        <select class="form-control" id="pricePoint">
+                            <option id="lowPrice">$</option>
+                            <option id="midPrice">$$</option>
+                            <option id="highPrice">$$$</option>
+                        </select>
+
+                    </div>
+                    <div class="text-center">
+                        <button type="button" id="submitSearch" class="btn btn-primary center-block">Find Me
+                            Brekkie!</button>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Small -->
+    <div class="container" id="resultsWrap">
+
+    </div>
+
+
+
+    <script src="assets/js/logic.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJdJBJ82riE78r65LwDdZ4RraI1bn2ES8&callback=initMap">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/@grabzit/js@3.3.0/grabzit.min.js"></script>
+
+
+</body>
+
+</html>
