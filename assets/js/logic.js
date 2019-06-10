@@ -266,7 +266,8 @@ $(document).on("click", ".submitInvite", function() {
     $("#resultsLarge").addClass("hide");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").removeClass("hide");
-    
+    $("#inviteImageDiv").addClass("hide");
+
     var hostName = $("#hostName").val().trim();
     var eventDate = $("#eventDate").val().trim();
     var eventTime = $("#eventTime").val().trim();
@@ -278,7 +279,11 @@ $(document).on("click", ".submitInvite", function() {
     $(".venueAddressPrint").html(inviteBrunchSpotAddress);
     $(".customMessagePrint").html(customMessage);
 
-    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "bheight": -1, "height": -1, "width": -1}).AddTo("inviteInsert");
+    GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "onstart": function() {
+        $("#loader").removeClass("hide");
+    }, "onfinish": function() {
+        $("#loader".addClass("hide");)
+    }}).AddTo("inviteInsert");
 
 
 });
