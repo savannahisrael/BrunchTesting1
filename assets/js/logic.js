@@ -251,8 +251,8 @@ $(document).on("click", ".modalClose", function() {
     $("#resultsLarge").removeClass("hide");
     $("#inviteFormWrap").addClass("hide");
     $("#inviteWrap").addClass("hide");
-    $("#inviteInsertWrap").addClass("invisible");
-    // $("#inviteInsertWrap").empty();
+    $("#inviteInsertWrap").empty();
+    
 });
 
 $(document).on("click", "#bubblyButton", function() {
@@ -295,11 +295,11 @@ $(document).on("click", ".editInviteButton", function() {
 $(document).on("click", ".saveInviteButton", function() {
     GrabzIt("ODNkNjJmNzIxYTgxNGY5MGI4OTc0MmMyMjc5YzIzNmQ=").ConvertPage({"target": "#inviteImageDiv", "onfinish": function(id){
         $("#inviteImageDiv").addClass("hide");
-        $("#editInviteButton").addClass("hide");
-        $("#saveInviteButton").addClass("hide");
-        $("<button>").attr("type", "button").addClass("btn btn-primary bellhop buttonMore downloadInvite").text("Download Invite");
     }}).AddTo("inviteWrap");
-
+    $("#editInviteButton").addClass("hide");
+    $("#saveInviteButton").addClass("hide");
+    var downloadButton = $("<button>").attr("type", "button").addClass("btn btn-primary bellhop downloadInvite").text("Download Invite");
+    $("#inviteWrap").append(downloadButton);
 });
 
 e
